@@ -1,0 +1,10 @@
+body { 
+    background-image: repeating-linear-gradient(to bottom right, rgb(0, 121, 121), rgb(0, 99, 99) 30%, rgb(0, 37, 91)) ;
+    border: 10px;
+    border-color: rgb(255, 5, 5);
+}
+
+api-container {
+    padding: 10px;
+    color: white;
+}
