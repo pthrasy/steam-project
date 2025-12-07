@@ -6,7 +6,7 @@ import json
 API_KEY = os.getenv("STEAM_API_KEY")  # set in Render later
 
 if not API_KEY:
-    # raise ValueError("Missing STEAM_API_KEY environment variable")
+    raise ValueError("Missing STEAM_API_KEY environment variable")
 
 def vanity_name_def(vanity_name):
     #sees if steam id is there
