@@ -19,7 +19,7 @@ if st.button("Fetch Stats"):
         data = fetch_all_data(user_input)
         st.json(data)
     except Exception as e: 
-        st.error(str(e())
+        st.error(str(e()
                  
 #loads cached data
 if not os.path.exists("data.json"):
@@ -38,3 +38,4 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
