@@ -20,7 +20,13 @@ if st.button("Fetch Stats"):
         st.json(data)
     except Exception as e: 
         st.error(str(e()))
-                 
+
+
+API_KEY = os.getenv("STEAM_API_KEY")
+
+if not API_KEY:
+    st.error("Missing Steam API key. Check environment variables.")
+    
 #loads cached data
 if not os.path.exists("data.json"):
     st.error("No data json found. Run fetch_steam_data.py first")
@@ -38,5 +44,6 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
