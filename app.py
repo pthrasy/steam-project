@@ -28,7 +28,7 @@ st.write("API loaded:", API_KEY is not None)
 
 if not API_KEY:
     st.error("Missing Steam API key. Check environment variables.")
-    
+    st.stop()
 #loads cached data
 if not os.path.exists("data.json"):
     st.error("No data json found. Run fetch_steam_data.py first")
@@ -46,6 +46,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
