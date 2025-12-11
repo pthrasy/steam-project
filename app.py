@@ -19,7 +19,7 @@ if st.button("Fetch Stats"):
         data = fetch_all_data(user_input)
         st.json(data)
     except Exception as e: 
-        st.error(str(e()))
+        st.error(str(e))
 
 
 API_KEY = os.getenv("STEAM_API_KEY")
@@ -46,6 +46,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
