@@ -13,7 +13,7 @@ from fetch_steam_data import fetch_all_data
 st.set_page_config(page_title="Steam Game Analytics", layout="wide")
 st.title(" Steam Data Dashboard")
 user_input = st.text_input("Enter user name or Steam ID")
-
+import osAPI_KEY = os.getenv("STEAM_API_KEY")
 API_KEY = os.getenv("STEAM_API_KEY")
 st.write("API loaded:", API_KEY is not None)
 if not API_KEY:
@@ -52,6 +52,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
