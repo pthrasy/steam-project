@@ -14,6 +14,12 @@ st.set_page_config(page_title="Steam Game Analytics", layout="wide")
 st.title(" Steam Data Dashboard")
 user_input = st.text_input("Enter user name or Steam ID")
 
+API_KEY = os.getenv("STEAM_API_KEY")
+st.write("API loaded:", API_KEY is not None)
+if not API_KEY:
+    st.error("Missing Steam API key. Go to Render → Your Service → Environment and add STEAM_API_KEY.")
+    st.stop()
+    
 if st.button("Fetch Stats"):
     try:
         data = fetch_all_data(user_input)
@@ -46,6 +52,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
