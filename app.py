@@ -10,7 +10,7 @@ import plotly.express as px
 import os
 from fetch_steam_data import fetch_all_data
 
-streamlit run app.py
+
 
 st.set_page_config(page_title="Steam Game Analytics", layout="wide")
 st.title(" Steam Data Dashboard")
@@ -49,6 +49,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
