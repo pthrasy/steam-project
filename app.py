@@ -42,12 +42,13 @@ with open("data.json", "r") as f:
 games = data['response'].get("games", [])
 
 if not games:
-    st.warning("No games found, make sure that your profile is public and that you play something.")
+    st.warning("No games found, make sure that your profile is public and that you play something. blah blajh blah")
 else: 
     #convert list to DataFrame
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
