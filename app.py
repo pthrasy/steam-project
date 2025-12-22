@@ -2,12 +2,13 @@
 #loads game data from data.json
 # uses pandas to process and prepare the data 
 # makes charts and tables from Streamlit
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 import json
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-import os
 from fetch_steam_data import fetch_all_data
 
 st.set_page_config(page_title="Steam Game Analytics", layout="wide")
@@ -47,6 +48,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
