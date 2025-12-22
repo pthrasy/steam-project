@@ -23,7 +23,7 @@ if st.button("Fetch Stats"):
         st.error(str(e))
 
 
-API_KEY = os.getenv("STEAM_API_KEY")
+API_KEY = os.getenv(STEAM_API_KEY)
 API_KEY_ALT = os.environ.get("STEAM_API_KEY")
 
 st.write("Method 1 (getenv):", API_KEY is not None)
@@ -47,6 +47,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
