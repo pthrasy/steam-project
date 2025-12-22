@@ -24,13 +24,12 @@ if st.button("Fetch Stats"):
 
 
 API_KEY = os.getenv("STEAM_API_KEY")
+API_KEY_ALT = os.environ.get("STEAM_API_KEY")
 
-st.write("API loaded:", API_KEY is not None)
-st.write("All environment variables:", list(os.environ.keys()))  # Shows all available env vars
-if API_KEY:
-    st.write("API Key (first 4 chars):", API_KEY[:4])  # Shows partial key for verification
-else:
-    st.error("STEAM_API_KEY not found in environment variables")
+st.write("Method 1 (getenv):", API_KEY is not None)
+st.write("Method 2 (environ.get):", API_KEY_ALT is not None)
+st.write("All env vars containing 'STEAM':", [k for k in os.environ.keys() if 'STEAM' in k.upper()])
+st.write("All env vars containing 'API':", [k for k in os.environ.keys() if 'API' in k.upper()])
 #loads cached data
 if not os.path.exists("data.json"):
     st.error("No data json found. Run fetch_steam_data.py first")
@@ -48,6 +47,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
