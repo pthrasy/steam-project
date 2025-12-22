@@ -2,4 +2,6 @@ streamlit       # For building the interactive dashboard
 pandas          # For handling and analyzing tabular data
 requests        # For making HTTP requests to the Steam API
 plotly          # For interactive charts
+
 schedule        # For optional local scheduling (daily updates)
+python-dotenv
