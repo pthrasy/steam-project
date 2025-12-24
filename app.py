@@ -9,7 +9,7 @@ import streamlit as st
 import plotly.express as px
 from fetch_steam_data import fetch_all_data
 
-print(st.secrets['key'])
+print(st.secrets['STEAM_API_KEY'])
 st.set_page_config(page_title="Steam Game Analytics", layout="wide")
 st.title(" Steam Data Dashboard")
 user_input = st.text_input("Enter user name or Steam ID")
@@ -43,6 +43,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
