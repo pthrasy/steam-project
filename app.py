@@ -13,7 +13,7 @@ print(st.secrets['STEAM_API_KEY'])
 st.set_page_config(page_title="Steam Game Analytics", layout="wide")
 st.title(" Steam Data Dashboard")
 user_input = st.text_input("Enter user name or Steam ID")
-streamlit run app.py
+
 
 if st.button("Fetch Stats"):
     try:
