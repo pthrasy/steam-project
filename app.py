@@ -34,7 +34,10 @@ if not os.path.exists("data.json"):
 with open("data.json", "r") as f:
     data = json.load(f)
 
-games = data['response'].get("games", [])
+if 'response' in data:
+    games = data['response'].get("games", [])
+elif 'games' in data:
+    games = data.get("games", [])
 
 if not games:
     st.warning("No games found, make sure that your profile is public and that you play something. blah blajh blah")
@@ -43,6 +46,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
