@@ -33,7 +33,7 @@ if not os.path.exists("data.json"):
 def extract_steam_data(data):
     """Extract all steam data from the JSON structure""" 
     result = {
-        'steam_id': data.get('steam_id', 'unknown'); 
+        'steam_id': data.get('steam_id', 'unknown'),
         'profile': None,
         'games': [],
         'recent_games': [],
@@ -75,6 +75,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
