@@ -52,7 +52,7 @@ def extract_steam_data(data):
         result['result_games'] = data['recently_played']['response'].get('games',[])
     
     if 'friends' in data and 'friendslist' in data['friends']:
-        result['friends'] = data['friends']['friendlist'].get('friends',[])
+        result['friends'] = data['friends']['friendslist'].get('friends',[])
     
     result['global_achievements'] = data.get('global_achievements', {})
     result['player_achievements'] = data.get('player_achievements', {})
@@ -75,6 +75,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
