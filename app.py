@@ -41,22 +41,22 @@ def extract_steam_data(data):
         'global_achievements': {},
         'player_achievements': {}
     }
-if 'profile' in data and 'response' in data['profile']:
-    players = data['profile']['response'].get('players', [])
-    if players:
-        result['profile'] = players[0]
-if 'owned_games' in data and 'response' in data['owned_games']:
-    result['games'] = data['owned_games']['response'].get('games',[])
-
-if 'recently_played' in data and 'repsonse' in data['recently_played']:
-    result['result_games'] = data['recently_played']['response'].get('games',[])
-
-if 'friends' in data and 'friendslist' in data['friends']:
-    result['friends'] = data['friends']['friendlist'].get('friends',[])
-
-result['global_achievements'] = data.get('global_achievements', {})
-result['player_achievements'] = data.get('player_achievements', {})
-return result 
+    if 'profile' in data and 'response' in data['profile']:
+        players = data['profile']['response'].get('players', [])
+        if players:
+            result['profile'] = players[0]
+    if 'owned_games' in data and 'response' in data['owned_games']:
+        result['games'] = data['owned_games']['response'].get('games',[])
+    
+    if 'recently_played' in data and 'repsonse' in data['recently_played']:
+        result['result_games'] = data['recently_played']['response'].get('games',[])
+    
+    if 'friends' in data and 'friendslist' in data['friends']:
+        result['friends'] = data['friends']['friendlist'].get('friends',[])
+    
+    result['global_achievements'] = data.get('global_achievements', {})
+    result['player_achievements'] = data.get('player_achievements', {})
+    return result 
 
 with open("data.json", "r") as f:
     data = json.load(f)
@@ -75,6 +75,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
