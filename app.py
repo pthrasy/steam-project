@@ -37,7 +37,7 @@ def extract_steam_data(data):
         'profile': None,
         'games': [],
         'recent_games': [],
-        'friends': []
+        'friends': [],
         'global_achievements': {},
         'player_achievements': {}
     }
@@ -75,6 +75,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
