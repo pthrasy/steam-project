@@ -43,6 +43,7 @@ def extract_steam_data(data):
     }
     if 'profile' in data and 'response' in data['profile']:
         players = data['profile']['response'].get('players', [])
+        print(data)
         if players:
             result['profile'] = players[0]
     if 'owned_games' in data and 'response' in data['owned_games']:
@@ -75,6 +76,7 @@ else:
     df = pd.DataFrame(games)
 
     df["playtime_hours"] 
+
 
 
 
