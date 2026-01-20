@@ -74,9 +74,10 @@ if not games:
 else: 
     #convert list to DataFrame
     df = pd.DataFrame(games)
-    df.to_csv('steamdata.csv', index = False)
+    
     if "playtime_forever" in df.columns:
         df["playtime_hours"] = df["playtime_forever"] / 60
+
 
 
 
