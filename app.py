@@ -73,9 +73,8 @@ if not games:
 else: 
     #convert list to DataFrame
     df = pd.DataFrame(games)
-    df["playtime_hours"] 
-    print(df)
-
+    if "playtime_forever" in df.columns:
+        df["playtime_hours"] = df["playtime_forever"] / 60
 
 
 
