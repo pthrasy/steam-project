@@ -14,6 +14,8 @@ st.set_page_config(page_title="Steam Game Analytics", layout="wide")
 st.title(" Steam Data Dashboard")
 user_input = st.text_input("Enter user name or Steam ID")
 
+API_KEY = os.getenv("STEAM_API_KEY")
+st.write("Method 1 (getenv):", API_KEY is not None)
 
 if st.button("Fetch Stats"):
     try:
@@ -23,8 +25,6 @@ if st.button("Fetch Stats"):
         st.error(str(e))
 
 
-API_KEY = os.getenv("STEAM_API_KEY")
-st.write("Method 1 (getenv):", API_KEY is not None)
 
 #loads cached data
 if not os.path.exists("data.json"):
@@ -75,6 +75,7 @@ else:
     df = pd.DataFrame(games)
     if "playtime_forever" in df.columns:
         df["playtime_hours"] = df["playtime_forever"] / 60
+
 
 
 
