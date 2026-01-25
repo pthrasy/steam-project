@@ -8,6 +8,7 @@ API_KEY = os.getenv("STEAM_API_KEY")
 if not API_KEY:
     print("WARNING: STEAM_API_KEY not found")
 
+@st.cache_data
 def vanity_name_def(vanity_name):
     #sees if steam id is there
     #if the 17 digit steam id, return it
@@ -57,7 +58,7 @@ def fetch_owned_games(steam_id):
         print("Error parsing JSON:", e)
         return None
 
-    
+
 def fetch_recently_played(steam_id):
   #fetches data from api
 
@@ -128,6 +129,7 @@ def fetch_friends_list(steam_id):
     except Exception as e:
         print("Error parsing JSON:", e)
         return None
+def 
 
 def fetch_player_achievements(appid, steam_id):
     #fetches player achievements 
@@ -265,6 +267,7 @@ if __name__ == "__main__":
         print("Steam data successfully fetched and stored.")
     except Exception as e:
         print(f"Error: {e}")
+
 
 
 
