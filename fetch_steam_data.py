@@ -105,8 +105,24 @@ def fetch_player_summary(steam_id):
         print("Error parsing JSON:", e)
         return None
 
-
-
+#gets the tags for the game
+def fetch_tags_data(appid):
+    url = "https://steamspy.com/api.php/tags"
+    params = { 
+        "requests": "appdetails",
+        "appid" : appid
+    response = requests.get(url, params=params)
+    try:
+        response = requests.get(url, params=params)
+        data = response.json()
+        if 'name' in data:  # Valid response will have game name
+                return data
+            return None
+        except Exception as e:
+            print(f"Error fetching SteamSpy data for {appid}: {e}")
+            return None
+        print("These are the tags for the games")
+        
 def fetch_friends_list(steam_id):
     #fetches data for friends list
     url = f"https://api.steampowered.com/ISteamUser/GetFriendList/v1"
@@ -197,6 +213,7 @@ def fetch_all_data(vanity_name):
     #Global achivements data for all owned games
     player_achievements = {}
     global_achievements = {}
+    tags = {}
 
 #debugs stuff
     
@@ -230,7 +247,12 @@ def fetch_all_data(vanity_name):
                 player_achievements[appid] = None
             else:
                 player_achievements[appid] = p_achievements
-            
+            game_tags = fetch_tags_data(appdetails, appid)
+            if not tags:
+                print(f"No data returned for appid {appid}")
+                tags[appid] = None
+            else: 
+                tags[appid] = game_tags
         except Exception as e:
             print(f"Error with appid {appid}: {e}")
             global_achievements[appid] = None
@@ -267,6 +289,7 @@ if __name__ == "__main__":
         print("Steam data successfully fetched and stored.")
     except Exception as e:
         print(f"Error: {e}")
+
 
 
 
