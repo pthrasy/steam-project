@@ -111,6 +111,7 @@ def fetch_tags_data(appid):
     params = { 
         "requests": "appdetails",
         "appid" : appid
+    }
     response = requests.get(url, params=params)
     try:
         response = requests.get(url, params=params)
