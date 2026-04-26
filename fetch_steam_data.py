@@ -20,7 +20,7 @@ def vanity_name_def(vanity_name):
     params = {
          "key": API_KEY,
          "vanityurl": vanity_name
-         }
+    }
 
     response = requests.get(url, params=params).json()
     result = response.get("response", {})
