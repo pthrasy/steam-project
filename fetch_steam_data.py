@@ -8,7 +8,7 @@ API_KEY = os.getenv("STEAM_API_KEY")
 if not API_KEY:
     print("WARNING: STEAM_API_KEY not found")
 
-@st.cache_data
+
 def vanity_name_def(vanity_name):
     #sees if steam id is there
     #if the 17 digit steam id, return it
