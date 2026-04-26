@@ -8,7 +8,7 @@ import csv
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-from fetch_steam_data import fetch_all_data
+from fetch_steam_data.py import fetch_all_data
 
 print(st.secrets['STEAM_API_KEY'])
 st.set_page_config(page_title="Steam Game Analytics", layout="wide")
