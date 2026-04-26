@@ -118,7 +118,6 @@ def fetch_tags_data(appid):
         data = response.json()
         if 'name' in data:  # Valid response will have game name
             return data
-            return None
         except Exception as e:
             print(f"Error fetching SteamSpy data for {appid}: {e}")
             return None
